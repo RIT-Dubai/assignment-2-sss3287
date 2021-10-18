@@ -13,4 +13,11 @@ def quit(x):
 
 
 if __name__ == '__main__':
-    quit(raw_input("Are you sure?"))
+    z = raw_input("Enter a Command!")
+    q = ('quit')
+    if z == q:
+              quit(raw_input("Are you sure?(y/n)"))
+    else:
+        print ("Please enter a valid command!")
+#quit(raw_input("Are you sure?(y/n)"))
+ #or each_cmd in z:
