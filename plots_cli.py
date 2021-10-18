@@ -14,10 +14,14 @@ def quit(x):
 
 if __name__ == '__main__':
     z = raw_input("Enter a Command!")
+    c = z.split()
     q = ('quit')
-    if z == q:
-              quit(raw_input("Are you sure?(y/n)"))
+try:
+    if c[0] == q:
+        quit(raw_input("Are you sure?(y/n)"))
     else:
-        print ("Please enter a valid command!")
+        raise ("Invalid Command")
+except:
+    print("Enter a command or 'quit' to quit.")
 #quit(raw_input("Are you sure?(y/n)"))
  #or each_cmd in z:
