@@ -45,7 +45,31 @@ def main():
             print("Enter a command or 'quit' to quit")
 
 
-d
+def student_average(input):
+    try:
+        with open(input[1], "r") as f1:
+            cr = csv.reader(f1)
+            next(cr)
+            count = 0
+            plotter.init(input[2] + " " + input[3], "Assignment", "Marks out of 100")
+            for row in cr:
+                if row[0] == input[3]:
+                    count += 1
+                    if row[1] == input[2]:
+                        count += 1
+                        for data in range(2, len(row)):
+                            plotter.add_data_point(float(row[data]))
+            if count == 2:
+                plotter.plot()
+                return True
+            else:
+                return False
+    except FileNotFoundError:
+        print("No such file:", input[1])
+    except IndexError:
+        print("Usage: stu <filename> <first name> <last name>")
+
+
 
 
 def help():
