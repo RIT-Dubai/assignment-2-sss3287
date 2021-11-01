@@ -4,8 +4,8 @@ import turtle
 
 
 def quit():
-    ans = input("Are you sure?(y/n)")
-    if ans == "y" or ans == "Y":
+    a = input("Are you sure?(y/n)")
+    if a == "y" or a == "Y":
         return True
 
     return False
@@ -34,6 +34,8 @@ def main():
                 class_average(choice)
             elif choice[0]=="help":
                 help()
+
+
             else:
                 raise RuntimeError
         except RuntimeError:
