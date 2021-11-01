@@ -4,6 +4,7 @@ import turtle
 
 
 def quit():
+    '''It allows the user quit the process and exit (Takes input Y,y,N,n)'''
     a = input("Are you sure?(y/n)")
     if a == "y" or a == "Y":
         return True
@@ -32,17 +33,22 @@ def main():
                     print("Average:", y)
             elif choice[0] == "cavg":
                 class_average(choice)
+            elif choice[0] == " ":
+                 choice
             elif choice[0]=="help":
                 help()
+
 
 
             else:
                 raise RuntimeError
         except RuntimeError:
             print("Enter a command or 'quit' to quit")
+            choice
 
 
 def student_average(input):
+    ''' the function plots a single student’s grades on the graph.'''
     try:
         with open(input[1], "r") as f1:
             cr = csv.reader(f1)
@@ -68,6 +74,7 @@ def student_average(input):
 
 
 def print_average(input):
+    '''the function in your plots module that calculates the class average for a single grade item.'''
     try:
         if int(input[2])>=12:
             print("Grade item does not exist")
@@ -93,6 +100,7 @@ def print_average(input):
 
 
 def class_average(input):
+    ''' the function in your plots module that plots the class average for all grade items.'''
     try:
         plotter.init("Class Average", "Assignments", "Marks out of 100")
         for x in range(2, 12):
