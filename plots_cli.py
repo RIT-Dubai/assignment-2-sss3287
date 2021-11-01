@@ -15,32 +15,32 @@ def quit():
 def main():
     while True:
         try:
-            choice = input(">> ")
-            choice = choice.split()
-            if choice[0] == "quit":
+            enter = input(">> ")
+            enter = enter.split()
+            if enter[0] == "quit":
                 if quit() == True:
                     print("Goodbye!")
                     break
-            elif choice[0] == "stu":
-                x=student_average(choice)
+            elif enter[0] == "stu":
+                x=student_average(enter)
                 if x==True:
                     print("Plot finished (window may be hidden)")
                 elif x == False:
                     print("Plot failed (no such student)")
-            elif choice[0] == "avg":
-                y=print_average(choice)
+            elif enter[0] == "avg":
+                y=print_average(enter)
                 if y!=-1:
                     print("Average:", y)
-            elif choice[0] == "cavg":
-                class_average(choice)
-            elif choice[0]=="help":
+            elif enter[0] == "cavg":
+                class_average(enter)
+            elif enter[0]=="help":
                 help()
 
 
 
             else:
-                raise RuntimeError
-        except RuntimeError:
+                raise IndexError
+        except IndexError:
             print("Enter a command or 'quit' to quit")
             continue
 
@@ -126,6 +126,7 @@ def class_average(input):
 
 
 def help():
+    '''This function should print the help message shown below (gives menu)'''
     print ("stu <filename> <first name> <last name> - plot student grades\n")
     print ("cavg <filename> - plot class average\n")
     print ("avg <filename> <number> - prints the average for the grade item\n")
