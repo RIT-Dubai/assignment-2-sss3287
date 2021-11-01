@@ -61,7 +61,7 @@ def print_average(input):
     except FileNotFoundError:
         print("No such file:", input[1])
     except IndexError:
-        print("Usage: stu <filename> <first name> <last name>")
+        print("Usage: avg <filename> <number>")
     return -1
 
 
