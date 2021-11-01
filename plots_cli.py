@@ -92,7 +92,7 @@ def print_average(input):
         print("No such file:", input[1])
     except IndexError:
         print("Usage: stu <filename> <first name> <last name>")
-    return pass
+    return
 
 
 
