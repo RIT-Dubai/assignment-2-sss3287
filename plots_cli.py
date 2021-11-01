@@ -1,9 +1,4 @@
-import plotter
 import csv
-
-def quit(x):
-
-    import csv
 import plotter
 import turtle
 
@@ -92,7 +87,7 @@ def print_average(input):
         print("No such file:", input[1])
     except IndexError:
         print("Usage: stu <filename> <first name> <last name>")
-    return
+    return -1
 
 
 def class_average(input):
