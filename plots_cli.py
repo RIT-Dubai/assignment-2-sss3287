@@ -70,6 +70,32 @@ def student_average(input):
         print("Usage: stu <filename> <first name> <last name>")
 
 
+def print_average(input):
+    try:
+        if int(input[2])>=12:
+            print("Grade item does not exist")
+            return -1
+        with open(input[1], "r") as f1:
+            cr = csv.reader(f1)
+            next(cr)
+            total = 0
+            count = 0
+            avg = 0
+            for row in cr:
+                total += float(row[int(input[2]) + 1])
+                count += 1
+            avg = round(total/count, 2)
+            return avg
+    except ValueError:
+        print("Grade item must be a number.")
+    except FileNotFoundError:
+        print("No such file:", input[1])
+    except IndexError:
+        print("Usage: stu <filename> <first name> <last name>")
+    return -1
+
+
+
 
 
 def help():
