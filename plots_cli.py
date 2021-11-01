@@ -33,8 +33,6 @@ def main():
                     print("Average:", y)
             elif choice[0] == "cavg":
                 class_average(choice)
-            elif choice[0] == " ":
-                 choice
             elif choice[0]=="help":
                 help()
 
@@ -44,7 +42,7 @@ def main():
                 raise RuntimeError
         except RuntimeError:
             print("Enter a command or 'quit' to quit")
-            choice
+            continue
 
 
 def student_average(input):
