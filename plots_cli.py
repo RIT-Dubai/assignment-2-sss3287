@@ -102,7 +102,7 @@ def help():
     print ("help - displays this message\n")
 
 
-#def main():
+def main():
     while True:
         try:
             enter = input(">> ")
@@ -135,4 +135,4 @@ def help():
             continue
 
 
-#main()
+main()
