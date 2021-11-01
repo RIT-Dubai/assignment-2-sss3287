@@ -8,7 +8,7 @@ def test_student_average():
     a=plots_cli.student_average("stu GCIS.123.600-assignment2-sample.csv Zeyad Bonita".split())
     assert(a==True)
     b=plots_cli.student_average("stu GCIS.123.600-assignment2-sample.csv Sohan Saimbhi".split())
-    assert(b==False)
+    assert(b!=True)
 
 def test_print_average():
     '''This function tests the function in your plots module that calculates the class average for a single grade item.'''
