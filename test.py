@@ -7,12 +7,15 @@ def test_student_average():
     '''This function tests if the function plots a single student’s grades on the graph'''
     a=plots_cli.student_average("stu GCIS.123.600-assignment2-sample.csv Zeyad Bonita".split())
     assert(a==True)
-
+    b=plots_cli.student_average("stu GCIS.123.600-assignment2-sample.csv Sohan Saimbhi".split())
+    assert(b==False)
 
 def test_print_average():
     '''This function tests the function in your plots module that calculates the class average for a single grade item.'''
-    a=plots_cli.print_average("avg GCIS.123.600-assignment2-sample.csv 5".split())
-    assert(a!=-1)
+    a=plots_cli.print_average("avg GCIS.123.600-assignment2-sample.csv 7".split())
+    assert(a==52.52)
+    b=plots_cli.print_average("avg GCIS.123.600-assignment2-sample.csv 5".split())
+    assert(b!=-1)
 
 
 def test_class_average():
@@ -21,6 +24,6 @@ def test_class_average():
     assert(a!=None)
 
 
-'''NOTE : In order for all these tests to pass you may have comment out only the main function
+'''NOTE : In order for these tests to pass you may have comment out only the main function
            that is def main() and call main in the plots_cli module
            to do that just put # in front of them #def main(): and #main()'''
