@@ -12,38 +12,6 @@ def quit():
     return False
 
 
-def main():
-    while True:
-        try:
-            enter = input(">> ")
-            enter = enter.split()
-            if enter[0] == "quit":
-                if quit() == True:
-                    print("Goodbye!")
-                    break
-            elif enter[0] == "stu":
-                x=student_average(enter)
-                if x==True:
-                    print("Plot finished (window may be hidden)")
-                elif x == False:
-                    print("Plot failed (no such student)")
-            elif enter[0] == "avg":
-                y=print_average(enter)
-                if y!=-1:
-                    print("Average:", y)
-            elif enter[0] == "cavg":
-                class_average(enter)
-            elif enter[0]=="help":
-                help()
-
-
-
-            else:
-                raise IndexError
-        except IndexError:
-            print("Enter a command or 'quit' to quit")
-            continue
-
 
 def student_average(input):
     ''' the function plots a single student’s grades on the graph.'''
@@ -132,6 +100,39 @@ def help():
     print ("avg <filename> <number> - prints the average for the grade item\n")
     print ("quit - quits\n")
     print ("help - displays this message\n")
+
+
+def main():
+    while True:
+        try:
+            enter = input(">> ")
+            enter = enter.split()
+            if enter[0] == "quit":
+                if quit() == True:
+                    print("Goodbye!")
+                    break
+            elif enter[0] == "stu":
+                x=student_average(enter)
+                if x==True:
+                    print("Plot finished (window may be hidden)")
+                elif x == False:
+                    print("Plot failed (no such student)")
+            elif enter[0] == "avg":
+                y=print_average(enter)
+                if y!=-1:
+                    print("Average:", y)
+            elif enter[0] == "cavg":
+                class_average(enter)
+            elif enter[0]=="help":
+                help()
+
+
+
+            else:
+                raise IndexError
+        except IndexError:
+            print("Enter a command or 'quit' to quit")
+            continue
 
 
 main()
