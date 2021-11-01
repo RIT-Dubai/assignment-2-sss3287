@@ -1,18 +1,51 @@
+import plotter
+import csv
+
 def quit(x):
 
-    a = ('Y')
-    b = ('y')
-    if x == a:
-        print("Goodbye!")
+    import csv
+import plotter
+import turtle
+
+
+def quit():
+    ans = input("Are you sure?(y/n)")
+    if ans == "y" or ans == "Y":
         return True
-    elif x == b:
-        print("Goodbye!")
-        return True
-    else:
-        return False
+
+    return False
 
 
+def main():
+    while True:
+        try:
+            choice = input(">> ")
+            choice = choice.split()
+            if choice[0] == "quit":
+                if quit() == True:
+                    print("Goodbye!")
+                    break
+            elif choice[0] == "stu":
+                x=student_average(choice)
+                if x==True:
+                    print("Plot finished (window may be hidden)")
+                elif x == False:
+                    print("Plot failed (no such student)")
+            elif choice[0] == "avg":
+                y=print_average(choice)
+                if y!=-1:
+                    print("Average:", y)
+            elif choice[0] == "cavg":
+                class_average(choice)
+            elif choice[0]=="help":
+                help()
+            else:
+                raise RuntimeError
+        except RuntimeError:
+            print("Enter a command or 'quit' to quit")
 
+
+d
 
 
 def help():
@@ -23,27 +56,4 @@ def help():
     print ("help - displays this message\n")
 
 
-if __name__ == '__main__':
-    try:
-        z = raw_input("Enter a Command!")
-        c = z.split()
-        q = ('quit')
-        h = ('help')
-        if c[0] == q:
-            quit(raw_input("Are you sure?(y/n)"))
-        elif c[0] == h:
-            help()
-        else:
-            raise "Invalid Command"
-    except:
-        print("Enter a command or 'quit' to quit.")
-        z = raw_input("Enter a Command!")
-        c = z.split()
-        q = ('quit')
-        if c[0] == q:
-            quit(raw_input("Are you sure?(y/n)"))
-        else:
-            raise "Invalid Command"
-
-#quit(raw_input("Are you sure?(y/n)"))
- #or each_cmd in z:
+main()
