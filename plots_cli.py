@@ -95,6 +95,30 @@ def print_average(input):
     return
 
 
+def class_average(input):
+    try:
+        plotter.init("Class Average", "Assignments", "Marks out of 100")
+        for x in range(2, 12):
+            total = 0
+            count = 1
+            with open(input[1], "r") as f1:
+                cr = csv.reader(f1)
+                next(cr)
+                total_avg = 0
+                for row in cr:
+                    total += float(row[x])
+                    count += 1
+                avg = total/count
+                plotter.add_data_point(round(avg, 2))
+                total_avg += avg
+        plotter.plot()
+        print("Plot is finished (window may be hidden)")
+        total_avg = total_avg / 10
+        return total_avg
+    except FileNotFoundError:
+        print("No such file:", input[1])
+    except IndexError:
+        print("Usage: cavg <filename>")
 
 
 
