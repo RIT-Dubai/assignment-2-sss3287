@@ -1,17 +1,18 @@
-import plots_cli
 import csv
 import plotter
 import turtle
-
+import plots_cli
 
 def test_student_average():
-    x=plots_cli.student_average("stu GCIS.123.600-assignment2-sample.csv Zeyad Bonita".split())
-    assert(x==True)
+    a=plots_cli.student_average("stu /Users/sohan_saimbhi/Desktop/GCIS.123.600-assignment2-sample.csv Zeyad Bonita".split())
+    assert(a==True)
+
 
 def test_print_average():
-    x=plots_cli.print_average("avg GCIS.123.600-assignment2-sample.csv 5".split())
-    assert(x!=-1)
+    a=plots_cli.print_average("avg /Users/sohan_saimbhi/Desktop/GCIS.123.600-assignment2-sample.csv 5".split())
+    assert(a!=-1)
+
 
 def test_class_average():
-    x=plots_cli.class_average("cavg GCIS.123.600-assignment2-sample.csv".split())
-    assert(x!=None)
+    a=plots_cli.class_average("cavg /Users/sohan_saimbhi/Desktop/GCIS.123.600-assignment2-sample.csv".split())
+    assert(a!=None)
